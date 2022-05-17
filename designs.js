@@ -5,13 +5,13 @@
 
 let form = document.getElementById("sizePicker");
 let colorPicker = document.getElementById('colorPicker');
-let pickedColor = document.getElementById('colorPicker.value')
+let pickedColor = document.getElementById('colorPicker').value
 let table = document.getElementById('pixelCanvas');
 
 
 function makeGrid(event) {
 // Your code goes here!
-console.log("function is working");
+
 let gridHeight = document.getElementById('inputHeight').value;
 let gridWidth = document.getElementById('inputWidth').value;
 
