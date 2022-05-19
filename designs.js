@@ -15,11 +15,11 @@ function makeGrid(event) {
 let gridHeight = document.getElementById('inputHeight').value;
 let gridWidth = document.getElementById('inputWidth').value;
 
-for (let i = 0; i <= gridHeight; i++){
+for (let i = 0; i < gridHeight; i++){
     let tr = document.createElement('tr');
     table.appendChild(tr);
 
-    for(let j = 0; j <= gridWidth; j++){
+    for(let j = 0; j < gridWidth; j++){
         let td = document.createElement('td');
         tr.appendChild(td);
         td.classList.add('cell'+[j])
@@ -42,7 +42,7 @@ table.addEventListener('click',function(event){
 
 
 function resetGrid(){
-    table.innerHTML = ''
+    table.innerHTML = '';
     makeGrid();
 }
 
