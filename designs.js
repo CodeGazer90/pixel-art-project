@@ -5,8 +5,8 @@
 
 let form = document.getElementById("sizePicker");
 let colorPicker = document.getElementById('colorPicker');
-let pickedColor = document.getElementById('colorPicker').value
 let table = document.getElementById('pixelCanvas');
+
 
 
 function makeGrid(event) {
@@ -22,6 +22,7 @@ for (let i = 0; i <= gridHeight; i++){
     for(let j = 0; j <= gridWidth; j++){
         let td = document.createElement('td');
         tr.appendChild(td);
+        td.classList.add('cell'+[j])
     }
 }
 
@@ -32,3 +33,29 @@ form.addEventListener('submit', function(event){
     makeGrid();
 });
 
+
+
+table.addEventListener('click',function(event){
+    let pickedColor = document.getElementById('colorPicker').value
+    event.target.closest('td').style.backgroundColor = pickedColor;  
+})
+
+
+function resetGrid(){
+    table.innerHTML = ''
+    makeGrid();
+}
+
+let reset = document.createElement("input");
+reset.type = 'submit';
+reset.value = "RESET",
+form.appendChild(reset);
+
+reset.addEventListener('click', function(event){
+    event.preventDefault();
+    resetGrid();
+});
+
+
+        
+    
